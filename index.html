@@ -4,49 +4,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#071321">
+
   <title>MESSINTINA FC 3D</title>
+
+  <meta name="description" content="MESSINTINA FC 3D - Play an exciting 3D football game with Argentina-inspired style.">
+  <meta name="theme-color" content="#071321">
+
+  <link rel="manifest" href="./manifest.json">
+
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
-      background: #071321;
+      background: linear-gradient(145deg, #020914, #102b48);
       color: white;
       font-family: Arial, sans-serif;
-      display: grid;
-      place-items: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      padding: 20px;
     }
-    main { padding: 24px; }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      padding: 35px 20px;
+      border: 1px solid #2876a8;
+      border-radius: 22px;
+      background: rgba(5, 20, 38, 0.92);
+      box-shadow: 0 0 30px #071e36;
+    }
+
     .logo {
-      font-size: clamp(32px, 8vw, 64px);
-      font-weight: 900;
-      letter-spacing: 2px;
-      color: #9bdcff;
-      text-shadow: 0 0 20px #168bff;
+      font-size: 65px;
+      margin-bottom: 15px;
     }
-    p { color: #c4d9ed; letter-spacing: 3px; }
-    button {
-      margin-top: 28px;
-      padding: 16px 52px;
-      border: 2px solid #8bd5ff;
-      border-radius: 8px;
-      background: linear-gradient(120deg,#0755a3,#101d35);
+
+    h1 {
+      font-size: 30px;
+      color: #8bd5ff;
+      margin: 10px 0;
+    }
+
+    p {
+      color: #c5d9eb;
+      line-height: 1.6;
+    }
+
+    .play {
+      display: block;
+      margin: 30px auto 15px;
+      padding: 17px;
+      width: 100%;
+      border-radius: 12px;
+      background: #168bd0;
       color: white;
-      font-size: 20px;
+      font-size: 19px;
       font-weight: bold;
+      text-decoration: none;
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 12px;
+      color: #8ba9c2;
     }
   </style>
 </head>
+
 <body>
-  <main>
-    <div class="logo">MESSINTINA FC 3D</div>
-    <p>THE ARGENTINA FOOTBALL EXPERIENCE</p>
-    <button onclick="alert('Welcome to MESSINTINA FC 3D!')">
-      PLAY NOW
-    </button>
+
+  <main class="container">
+    <div class="logo">⚽</div>
+
+    <h1>MESSINTINA FC 3D</h1>
+
+    <p>
+      THE FOOTBALL EXPERIENCE
+      <br>
+      Argentina Inspired • 3D Football • Mobile Gaming
+    </p>
+
+    <a class="play" href="./game.html">
+      PLAY NOW ⚽
+    </a>
+
+    <p>Move. Pass. Shoot. Score.</p>
+
+    <div class="footer">
+      MESSINTINA FC 3D © 2026
+    </div>
   </main>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js");
+      });
+    }
+  </script>
+
 </body>
   </html>
   
